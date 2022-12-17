@@ -3402,13 +3402,14 @@
     <meta charset="UTF-8">
     <title>Awesome-pyecharts</title>
             <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
 </head>
 <body>
-    <div id="9ad0ee6dbae84cf6bf8ce8ab18d6318f" class="chart-container" style="width:100%; height:480px;"></div>
+    <div id="1b89e5173539432a858ca10782ad241c" class="chart-container" style="width:100%; height:480px;"></div>
     <script>
-        var chart_9ad0ee6dbae84cf6bf8ce8ab18d6318f = echarts.init(
-            document.getElementById('9ad0ee6dbae84cf6bf8ce8ab18d6318f'), 'white', {renderer: 'canvas'});
-        var option_9ad0ee6dbae84cf6bf8ce8ab18d6318f = {
+        var chart_1b89e5173539432a858ca10782ad241c = echarts.init(
+            document.getElementById('1b89e5173539432a858ca10782ad241c'), 'white', {renderer: 'canvas'});
+        var option_1b89e5173539432a858ca10782ad241c = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -5358,8 +5359,8 @@
             ],
             "hoverAnimation": true,
             "label": {
-                "show": true,
-                "position": "insideTopRight",
+                "show": false,
+                "position": "top",
                 "margin": 8
             },
             "lineStyle": {
@@ -5373,13 +5374,7 @@
                 "opacity": 0
             },
             "zlevel": 0,
-            "z": 0,
-            "rippleEffect": {
-                "show": true,
-                "brushType": "stroke",
-                "scale": 2.5,
-                "period": 4
-            }
+            "z": 0
         },
         {
             "type": "line",
@@ -7294,8 +7289,8 @@
             ],
             "hoverAnimation": true,
             "label": {
-                "show": true,
-                "position": "insideTopRight",
+                "show": false,
+                "position": "top",
                 "margin": 8
             },
             "lineStyle": {
@@ -7309,13 +7304,7 @@
                 "opacity": 0
             },
             "zlevel": 0,
-            "z": 0,
-            "rippleEffect": {
-                "show": true,
-                "brushType": "stroke",
-                "scale": 2.5,
-                "period": 4
-            }
+            "z": 0
         }
     ],
     "legend": [
@@ -7864,6 +7853,8 @@
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
+            "min": 10,
+            "max": 24,
             "minInterval": 0,
             "splitLine": {
                 "show": false,
@@ -7887,9 +7878,9 @@
         }
     ]
 };
-        chart_9ad0ee6dbae84cf6bf8ce8ab18d6318f.setOption(option_9ad0ee6dbae84cf6bf8ce8ab18d6318f);
+        chart_1b89e5173539432a858ca10782ad241c.setOption(option_1b89e5173539432a858ca10782ad241c);
             window.addEventListener('resize', function(){
-                chart_9ad0ee6dbae84cf6bf8ce8ab18d6318f.resize();
+                chart_1b89e5173539432a858ca10782ad241c.resize();
             })
     </script>
 </body>
