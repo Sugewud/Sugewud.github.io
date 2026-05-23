@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" role="img" aria-labelledby="title">
+  <title id="title">Shenzhen University logo card</title>
+  <rect width="220" height="120" fill="#f2f7fb"/>
+  <rect x="1" y="1" width="218" height="118" fill="none" stroke="#c8d8e4" stroke-width="2"/>
+  <circle cx="52" cy="46" r="30" fill="none" stroke="#1f5d8f" stroke-width="6"/>
+  <path d="M36 54c9-19 22-30 38-34-5 18-16 31-38 34z" fill="#1f5d8f"/>
+  <text x="92" y="52" fill="#20211e" font-family="Aptos, 'Trebuchet MS', sans-serif" font-size="30" font-weight="800">SZU</text>
+  <text x="22" y="96" fill="#1f5d8f" font-family="Aptos, 'Trebuchet MS', sans-serif" font-size="17" font-weight="800">深圳大学</text>
+</svg>
