@@ -462,6 +462,8 @@ a.social-btn:hover {
 
 .pub-thumb {
   width: 280px;
+  max-width: 100%;
+  min-width: 0;
   flex-shrink: 0;
 }
 
@@ -478,6 +480,35 @@ a.social-btn:hover {
 
 .pub-thumb img:hover {
   transform: scale(1.03);
+}
+
+.pub-demo {
+  display: block;
+  width: 280px;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #000;
+  object-fit: cover;
+}
+
+.pub-demo-frame {
+  position: relative;
+}
+
+.pub-demo-sound {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 3px;
+  background: rgba(7, 16, 18, .78);
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: .62rem;
 }
 
 .image-lightbox {
@@ -579,6 +610,12 @@ a.social-btn:hover {
   color: var(--text);
   font-style: normal;
   font-weight: 600;
+}
+
+.pub-venue.pub-venue-bold {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .pub-award {
@@ -698,7 +735,8 @@ a.social-btn:hover {
   }
 
   .pub-thumb,
-  .pub-thumb img {
+  .pub-thumb img,
+  .pub-demo {
     width: 100%;
   }
 }
