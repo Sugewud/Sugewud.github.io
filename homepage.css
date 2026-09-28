@@ -1,0 +1,97 @@
+/* Local alternative: keep the notebook character, soften the hierarchy. */
+:root {
+  --bg: #faf9f6;
+  --grid-color: rgba(65, 58, 45, .025);
+  --text: #292722;
+  --text-muted: #66635d;
+  --text-light: #807c74;
+  --border: #e2ded5;
+  --tag-bg: rgba(255, 255, 255, .65);
+  --tag-border: #ded9cf;
+}
+
+.container { padding-top: 44px; }
+.site-header { margin-bottom: 24px; }
+.site-header + hr.unseen-section-divider { margin: 0 0 28px; }
+hr.unseen-section-divider { margin: 36px 0; }
+.bio-section { gap: 30px; }
+.bio-text p { line-height: 1.8; }
+.profile-details summary { color: var(--text-muted); }
+
+.highlight-box {
+  padding: 12px 15px;
+  border-left: 2px solid #c5b78c;
+  border-radius: 0 5px 5px 0;
+  background: #f3f0e6;
+  color: #625b4d;
+  font-size: .88rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.opportunity-cn {
+  display: block;
+  margin-top: 6px;
+  color: #797264;
+  font-size: .82rem;
+}
+
+.section-title { margin-bottom: 18px; }
+.news-item { padding: 9px 0; }
+.news-content strong { font-weight: 600; }
+.news-toggle { background: rgba(255, 255, 255, .45); }
+
+.pub-item { gap: 24px; padding: 25px 0; }
+.pub-item:first-child { padding-top: 20px; }
+.pub-body { gap: 6px; }
+.pub-title { font-size: 1.04rem; line-height: 1.45; }
+.pub-authors { font-size: .84rem; }
+.pub-venue { font-size: .82rem; }
+.pub-venue.pub-venue-bold { font-weight: 600; }
+.pub-award {
+  color: #94612f;
+  font-size: .86rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+.pub-thumb img, .pub-demo {
+  border-color: var(--border);
+  border-radius: 6px;
+}
+.pub-thumb img:hover { transform: none; border-color: #b7afa1; }
+.pub-links { gap: 8px; margin-top: 5px; }
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 29px;
+  padding: 3px 11px;
+  border-radius: 4px;
+  color: #57534b;
+}
+.pub-link:hover { background: white; }
+.site-footer { margin-top: 48px; }
+
+@media (max-width: 700px) {
+  .container { padding-top: 30px; }
+  .bio-section { gap: 24px; }
+  .bio-text { text-align: left; }
+  .pub-item { gap: 16px; padding: 24px 0; }
+  .news-item { grid-template-columns: 74px 1fr; gap: 10px; }
+  .pub-title { font-size: 1.03rem; }
+}
+
+.research-interests { margin: 16px 0 18px; }
+.research-interests h2 {
+  margin: 0 0 7px;
+  font-size: .97rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.research-interests ul {
+  padding-left: 20px;
+  color: #94612f;
+  font-size: .97rem;
+  line-height: 1.65;
+}
+.research-interests li { padding-left: 2px; }
+.research-interests li + li { margin-top: 3px; }

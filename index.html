@@ -7,6 +7,33 @@
   <meta name="keywords" content="Zihan Su, 苏梓瀚, Tsinghua University, Shenzhen University, unified multimodal models, multimodal generation, post-training, Safe-Sora, UniMRG, TextureDiffusion">
   <meta name="description" content="Personal academic homepage of Zihan Su, M.S. student at Tsinghua University, working on unified multimodal generation and understanding, safe generative models, and controllable image editing." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="homepage.css" />
+  <style>
+.research-interests { margin: 19px 0 20px; }
+.research-interests h2 { font-size: .93rem; font-weight: 400; color: var(--text-muted); margin-bottom: 9px; }
+.research-interests ul { list-style: none; padding: 0; color: #385e7a; }
+.research-interests li { position: relative; padding-left: 17px; }
+.research-interests li::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: .65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .7;
+}
+.research-interests li + li { margin-top: 6px; }
+  .bio-section { margin-bottom: 18px; }
+  .bio-section + .highlight-box { margin-top: 0; }
+
+.pub-authors .self {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+  </style>
 </head>
 <body>
 <div class="container">
@@ -46,45 +73,28 @@
         Hi! I am <strong>Zihan Su (Chinese name: 苏梓瀚)</strong>, a master's student in Computer Technology at
         <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a>, advised by
         <a href="https://scholar.google.com/citations?user=fYdxi2sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Prof. Chun Yuan</a>.
-        My research focuses on <strong>World Models and Real-Time Interactive Video Generation</strong>.
-        I have interned at Tencent WXG, Alibaba, ByteDance Jindouyun Talent Program, and Joy Future Academy.
+        I am currently a Foundation Model Research Intern at Joy Future Academy, working on world models and real-time interactive video generation.
       </p>
 
-      <details class="profile-details">
-        <summary>Detailed Profile (详细个人介绍)</summary>
-        <div class="profile-details-body">
-          <p>
-            Hi! I am <strong>Zihan Su (Chinese name: 苏梓瀚)</strong>, a master's student in Computer Technology at
-            <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a>, advised by
-            <a href="https://scholar.google.com/citations?user=fYdxi2sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Prof. Chun Yuan</a>.
-            My research focuses on World Models and Real-Time Interactive Video Generation.
-            I am interested in competitive programming and won several <strong>ACM-ICPC</strong> silver medals, and ranked top 0.68% nationwide in CCF CSP.
-            I have first-author papers at <strong>ICML 2026</strong>, <strong>NeurIPS 2025</strong>, and <strong>ICASSP 2025 Oral</strong>.
-            My internship experience spans world models at Joy Future Academy, AIGC deployment projects in ByteDance's Jindouyun Talent Program,
-            unified multimodal generation and understanding at Alibaba, and MLLM post-training at Tencent WXG.
-          </p>
-          <br>
-          <p>
-            Hi！我是<strong>苏梓瀚 (English name: Zihan Su)</strong>，
-            <a href="https://www.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学</a>计算机技术硕士研究生，导师是
-            <a href="https://scholar.google.com/citations?user=fYdxi2sAAAAJ&amp;hl=en" target="_blank" rel="noopener">袁春教授</a>。
-            我的研究方向包括世界模型和实时交互式视频生成。
-            我对程序设计竞赛感兴趣，曾获得多枚 <strong>ACM-ICPC</strong> 银牌，并在 CCF CSP 中排名全国前 0.68%。
-            我以第一作者身份在 <strong>ICML 2026</strong>、<strong>NeurIPS 2025</strong> 和
-            <strong>ICASSP 2025 Oral</strong> 发表论文。我的实习经历包括京东探索研究院世界模型基模、字节跳动筋斗云 AIGC 落地、
-            阿里巴巴统一多模态生成与理解，以及腾讯 WXG 多模态大模型后训练。
-          </p>
-        </div>
-      </details>
-
-      <div class="highlight-box">
-        I am seeking full-time and internship positions related to World Models and Real-Time Interactive Video Generation.
-        Please feel free to contact me by
-        <a href="mailto:zh-su24@mails.tsinghua.edu.cn">Email</a>.<br/>
-        我正在寻找与世界模型和实时交互式视频生成相关的正式岗位和实习岗位。欢迎通过<a href="mailto:zh-su24@mails.tsinghua.edu.cn">邮箱</a>与我联系。
+      <div class="research-interests">
+        <h2>My research interests include:</h2>
+        <ul>
+          <li>World Models &amp; Real-Time Interactive Video Generation</li>
+          <li>Unified Multimodal Generation &amp; Understanding</li>
+          <li>Post-Training for Text-to-Image Models</li>
+        </ul>
       </div>
+
+
+
     </div>
   </section>
+
+      <div class="highlight-box">
+        Open to full-time and internship opportunities in world models and real-time interactive video generation.
+        <a href="mailto:zh-su24@mails.tsinghua.edu.cn">Get in touch ↗</a>
+        <span class="opportunity-cn" lang="zh">寻找世界模型与实时交互式视频生成方向的正式及实习岗位，欢迎联系。</span>
+      </div>
 
   <hr class="unseen-section-divider" />
 
@@ -119,11 +129,11 @@
         <span class="news-date">09/2025</span>
         <span class="news-content">🎉 <strong>Safe-Sora</strong> was accepted to <strong>NeurIPS 2025</strong> as a first-author paper.</span>
       </li>
-      <li class="news-item">
+      <li class="news-item news-hidden">
         <span class="news-date">09/2025</span>
         <span class="news-content">🏆 Received the <strong>Tsinghua Friend - Ordos Talent Scholarship</strong>.</span>
       </li>
-      <li class="news-item">
+      <li class="news-item news-hidden">
         <span class="news-date">06/2025</span>
         <span class="news-content">🎉 Joined <strong>Tencent WXG</strong> as an Application Intern.</span>
       </li>
@@ -150,47 +160,34 @@
   <hr class="unseen-section-divider" />
 
   <!-- ======================================================
-       EDUCATION
-  ====================================================== -->
-  <section id="education">
-    <h2 class="section-title">Education</h2>
-    <ul class="edu-list">
-      <li class="edu-item">
-        <div class="edu-years">Sep. 2024<br/>—<br/>Present</div>
-        <img class="edu-logo edu-logo-wide" src="assets/logos/tsinghua-transparent.png" alt="Tsinghua University"
-             onerror="this.style.display='none'" />
-        <div class="edu-content">
-          <div class="school">
-            <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University (THU)</a>
-          </div>
-          <div class="dept">Computer Technology (Recommended Admission)</div>
-          <div class="degree">M.S. student, GPA 3.9/4.0.</div>
-        </div>
-      </li>
-      <li class="edu-item">
-        <div class="edu-years">Sep. 2020<br/>—<br/>Jul. 2024</div>
-        <img class="edu-logo" src="assets/logos/szu.png" alt="Shenzhen University"
-             onerror="this.style.display='none'" />
-        <div class="edu-content">
-          <div class="school">
-            <a href="https://www.szu.edu.cn/" target="_blank" rel="noopener">Shenzhen University (SZU)</a>
-          </div>
-          <div class="dept">Tencent Cloud AI Class</div>
-          <div class="degree">B.Eng., Rank top 1%.</div>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <hr class="unseen-section-divider" />
-
-  <!-- ======================================================
        PUBLICATIONS
   ====================================================== -->
   <section id="publications">
     <h2 class="section-title">Publications</h2>
 
     <ul class="pub-list">
+      <li class="pub-item">
+        <div class="pub-thumb" style="display: grid; gap: 10px;">
+          <img src="assets/figures/routed-forcing-figure1-hd.png"
+               alt="Routed Forcing Figure 1: regional diversity loss during distillation"
+               width="4800" height="1870" />
+          <img src="assets/figures/routed-forcing-pipeline.svg"
+               alt="Routed Forcing Figure 2: semantic-region and noise-stage routing pipeline"
+               width="729" height="215" />
+        </div>
+        <div class="pub-body">
+          <div class="pub-title">Where and When to Force: Routed Forcing for Streaming Avatars</div>
+          <div class="pub-authors"><span class="self">Zihan Su</span>, Siwen Lu, Junhao Zhuang, et al.</div>
+          <div class="pub-venue"><span class="venue-name">arXiv 2026</span> · First Author</div>
+          <div class="pub-award">Region- and noise-stage-routed distillation for more dynamic and diverse streaming avatars, while preserving visual quality and lip synchronization.</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2609.30963" target="_blank" rel="noopener">Paper</a>
+            <a class="pub-link" href="https://github.com/Sugewud/Routed-Forcing" target="_blank" rel="noopener">Code</a>
+            <a class="pub-link" href="routed-forcing/" target="_blank" rel="noopener">Project Page</a>
+          </div>
+        </div>
+      </li>
+
       <li class="pub-item">
         <div class="pub-thumb">
           <div class="pub-demo-frame">
@@ -210,6 +207,22 @@
             <a class="pub-link" href="https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/Doc/Echo_WM.pdf" target="_blank" rel="noopener">Paper</a>
             <a class="pub-link" href="https://github.com/jd-opensource/JoyAI-Echo" target="_blank" rel="noopener">Code</a>
             <a class="pub-link" href="https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/" target="_blank" rel="noopener">Project Page</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="pub-item">
+        <div class="pub-thumb">
+          <img src="assets/figures/joyai-echo-1.5-teaser.jpg" alt="JoyAI-Echo-1.5: persistent stories and interactive worlds" />
+        </div>
+        <div class="pub-body">
+          <div class="pub-title">JoyAI-Echo-1.5: Long-Horizon Audio-Visual Generation for Persistent Stories and Interactive Worlds</div>
+          <div class="pub-venue pub-venue-bold">Technical Report · Contributor</div>
+          <div class="pub-award">Audio-visual generation for persistent stories and interactive worlds, combining cross-shot memory, geometric camera control, and rollout-aware training.</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2608.23383" target="_blank" rel="noopener">Paper</a>
+            <a class="pub-link" href="https://github.com/jd-opensource/JoyAI-Echo" target="_blank" rel="noopener">Code</a>
+            <a class="pub-link" href="https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/" target="_blank" rel="noopener">Project Page</a>
           </div>
         </div>
       </li>
@@ -264,6 +277,41 @@
             <a class="pub-link" href="https://arxiv.org/abs/2409.09610" target="_blank" rel="noopener">Paper</a>
             <a class="pub-link" href="https://github.com/THU-CVML/TextureDiffusion" target="_blank" rel="noopener">Code</a>
           </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="unseen-section-divider" />
+
+  <!-- ======================================================
+       EDUCATION
+  ====================================================== -->
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <ul class="edu-list">
+      <li class="edu-item">
+        <div class="edu-years">Sep. 2024<br/>—<br/>Present</div>
+        <img class="edu-logo edu-logo-wide" src="assets/logos/tsinghua-transparent.png" alt="Tsinghua University"
+             onerror="this.style.display='none'" />
+        <div class="edu-content">
+          <div class="school">
+            <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University (THU)</a>
+          </div>
+          <div class="dept">Computer Technology (Recommended Admission)</div>
+          <div class="degree">M.S. student, GPA 3.9/4.0.</div>
+        </div>
+      </li>
+      <li class="edu-item">
+        <div class="edu-years">Sep. 2020<br/>—<br/>Jul. 2024</div>
+        <img class="edu-logo" src="assets/logos/szu.png" alt="Shenzhen University"
+             onerror="this.style.display='none'" />
+        <div class="edu-content">
+          <div class="school">
+            <a href="https://www.szu.edu.cn/" target="_blank" rel="noopener">Shenzhen University (SZU)</a>
+          </div>
+          <div class="dept">Tencent Cloud AI Class</div>
+          <div class="degree">B.Eng., Rank top 1%.</div>
         </div>
       </li>
     </ul>
@@ -348,7 +396,7 @@
        FOOTER
   ====================================================== -->
   <footer class="site-footer">
-    <p>© Zihan Su &nbsp;·&nbsp; Latest updated May 2026</p>
+    <p>© Zihan Su &nbsp;·&nbsp; Last updated September 2026</p>
   </footer>
 
 </div>
