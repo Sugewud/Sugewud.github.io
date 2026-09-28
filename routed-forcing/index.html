@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Routed Forcing — Where and When to Force</title>
+  <meta name="description" content="Where and When to Force: Routed Forcing for Streaming Avatars. Semantic-region and noise-stage routing for dynamic, diverse, audio-driven streaming avatars.">
+  <meta name="theme-color" content="#f7f8f5">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="wordmark" href="#"><span class="brand-mark" aria-hidden="true">r<span>f</span></span> Routed Forcing</a>
+    <nav aria-label="Page navigation">
+      <a href="#method">Method</a><a href="#demos">Comparisons</a><a href="#results">Results</a><a href="#citation">Citation</a>
+    </nav>
+    <a class="nav-paper" href="https://arxiv.org/abs/2609.30963" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="paper-title">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Streaming avatars · arXiv 2026</p>
+      <h1 id="paper-title">Where and When to Force:<br><span>Routed Forcing</span><br class="mobile-break"> for Streaming Avatars</h1>
+      <p class="hero-summary">More expressive motion. More diverse gestures.<br>Distillation that knows <em>where</em> and <em>when</em> to guide.</p>
+      <div class="authors">
+        <div class="author-row"><a href="../">Zihan Su<sup>1,2,*</sup></a><span>Siwen Lu<sup>1,*</sup></span><span>Junhao Zhuang<sup>2,†</sup></span><span>Zeyue Xue<sup>2</sup></span><span>Haoyang Huang<sup>2</sup></span></div>
+        <div class="author-row"><span>Guanghao Li<sup>1</sup></span><span>Xiaofeng Tan<sup>3</sup></span><span>Chun Yuan<sup>1,†</sup></span><span>Nan Duan<sup>2</sup></span></div>
+      </div>
+      <p class="affiliations"><span><sup>1</sup> Tsinghua University</span><span><sup>2</sup> Joy Future Academy, JD</span><span><sup>3</sup> Southeast University</span></p>
+      <p class="contributions">* Equal contribution &nbsp; † Corresponding authors</p>
+      <div class="hero-links">
+        <a class="button primary" href="https://arxiv.org/abs/2609.30963" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg> Paper <span aria-hidden="true">↗</span></a>
+        <a class="button" href="https://github.com/Sugewud/Routed-Forcing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></svg> Code</a>
+        <a class="button text-button" href="#demos">View comparisons <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="highlights">
+        <div><strong>+38.8<span>%</span></strong><p>Motion dynamics</p><small>SpeakerVid · RAFT-Motion vs. Self Forcing</small></div>
+        <div><strong>+7–25<span>%</span></strong><p>Motion diversity</p><small>Four metrics · SpeakerVid &amp; AVSpeech</small></div>
+        <div><strong>1.3<span>B</span></strong><p>Causal streaming student</p><small>Four sampling steps per block</small></div>
+      </div>
+    </section>
+
+    <section class="wrap section overview" id="overview">
+      <div><p class="eyebrow">The idea</p><h2>Not every region needs<br>the same supervision.</h2></div>
+      <div class="overview-copy"><p>Distilling a video diffusion model into a fast causal generator can compress its motion diversity. The loss is uneven: pose and gesture regions suffer most, while the audio-driven mouth and background are less affected.</p><p><strong>Routed Forcing directs real-video supervision to the non-mouth person region at high noise stages.</strong> Distribution matching handles the rest, preserving lip synchronization and refining visual details.</p><a class="inline-link" href="https://arxiv.org/html/2609.30963v1#abstract1" target="_blank" rel="noopener">Read the full abstract <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="wrap section method-section" id="method">
+      <div class="section-heading"><div><p class="eyebrow">01 / Method</p><h2>Two decisions. One routing rule.</h2></div><p>Match the objective to the region<br>and the stage of denoising.</p></div>
+      <div class="routing-grid">
+        <article><span class="step-label">WHERE</span><h3>Route by semantic region.</h3><p>Use Data-Forcing Distillation on the <strong>non-mouth person region</strong> to recover diverse pose and gesture patterns. Keep DMD on the mouth and background.</p></article>
+        <article><span class="step-label coral">WHEN</span><h3>Route by noise stage.</h3><p>Activate DFD at <strong>high noise</strong> to guide motion. At low noise, use DMD to refine details and avoid blur from spatial differences between real and generated videos.</p></article>
+      </div>
+      <figure class="paper-figure"><a href="../assets/figures/routed-forcing-pipeline.svg" target="_blank" rel="noopener" aria-label="Open full-resolution method figure"><img src="../assets/figures/routed-forcing-pipeline.svg" width="729" height="215" loading="lazy" alt="Routed Forcing pipeline: a causal student receives first-frame, audio, and text conditions. Region and noise-stage routing combines DMD on generated rollouts with DFD on real videos."></a><figcaption><span>Figure 2</span> DFD supervises the non-mouth person region at high noise; DMD is used elsewhere. Click the figure to view it at full resolution.</figcaption></figure>
+      <div class="routing-rule"><span>Non-mouth person + high noise</span><b>DFD</b><span class="rule-divider" aria-hidden="true"></span><span>All other regions / noise stages</span><b class="dmd">DMD</b></div>
+      <details class="motivation"><summary>Why route? The regional diversity observation <span aria-hidden="true">+</span></summary><figure class="paper-figure"><a href="../assets/figures/routed-forcing-figure1-hd.png" target="_blank" rel="noopener"><img src="../assets/figures/routed-forcing-figure1-hd.png" width="4800" height="1870" loading="lazy" alt="Motivation figure comparing teacher and student motion diversity. The non-mouth person region shows the largest diversity drop."></a><figcaption><span>Figure 1</span> Regional diversity is measured as mean pairwise LPIPS across four seeds over 100 SpeakerVid conditions. The non-mouth person region shows the largest drop.</figcaption></figure></details>
+    </section>
+
+    <section id="demos" class="demo-section">
+      <div class="wrap">
+        <div class="section-heading inverse"><div><p class="eyebrow">02 / See the difference</p><h2>Give motion room to unfold.</h2></div><p>Same first frame. Same audio.<br>Three training strategies.</p></div>
+        <figure class="demo">
+          <a href="../assets/figures/routed-forcing-qualitative-main.png" target="_blank" rel="noopener" aria-label="Open the full-resolution qualitative comparison from Figure 3">
+            <img src="../assets/figures/routed-forcing-qualitative-main.png" width="3200" height="1629" loading="lazy" alt="Paper Figure 3: two cases across four timesteps, comparing Self Forcing, Data-Forcing Distillation, and Routed Forcing. Routed Forcing shows more varied hand gestures with clearer hand details.">
+          </a>
+          <figcaption><span>Routed Forcing produces richer gestures than Self Forcing and clearer hands than Data-Forcing Distillation.</span></figcaption>
+        </figure>
+        <figure class="demo">
+          <a href="../assets/figures/routed-forcing-qualitative-appendix.png" target="_blank" rel="noopener" aria-label="Open the full-resolution qualitative comparison from Figure 8">
+            <img src="../assets/figures/routed-forcing-qualitative-appendix.png" width="3200" height="1629" loading="lazy" alt="Paper Figure 8: two additional cases across four timesteps, comparing Self Forcing, Data-Forcing Distillation, and Routed Forcing. The examples show changes in hand position and palm orientation.">
+          </a>
+          <figcaption><span>Additional examples show more varied hand positions and palm orientations, while preserving clearer details during gestures.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="results" class="results-section">
+      <div class="wrap section">
+        <div class="section-heading"><div><p class="eyebrow">03 / Results</p><h2>More motion. Details preserved.</h2></div><p>Controlled comparisons with the same<br>initialization, training data, and random seeds.</p></div>
+        <div class="result-toolbar"><div class="dataset-switch" role="group" aria-label="Select evaluation dataset"><button type="button" data-dataset="SpeakerVid" aria-pressed="true">SpeakerVid</button><button type="button" data-dataset="AVSpeech" aria-pressed="false">AVSpeech</button></div><span>↓ lower is better &nbsp; ↑ higher is better</span></div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Evaluation results; scroll horizontally on small screens">
+          <table><caption id="table-caption">SpeakerVid · Controlled training strategy comparison</caption><thead><tr><th scope="col" rowspan="2">Method</th><th scope="colgroup" colspan="2">Video Quality</th><th scope="colgroup" colspan="2">Lip Sync</th><th scope="colgroup" colspan="2">Dynamics (×100)</th><th scope="colgroup" colspan="4">Diversity (×100)</th></tr><tr><th scope="col">FID ↓</th><th scope="col">FVD ↓</th><th scope="col">Sync-C ↑</th><th scope="col">Sync-D ↓</th><th scope="col">RAFT ↑</th><th scope="col">DINO-T ↑</th><th scope="col">CLIP ↑</th><th scope="col">DINO ↑</th><th scope="col">LPIPS ↑</th><th scope="col">L1 ↑</th></tr></thead><tbody id="results-body">
+            <tr><th scope="row">Self Forcing</th><td>27.17</td><td>320.91</td><td>4.03</td><td>10.97</td><td>5.62</td><td>1.07</td><td>3.07</td><td>1.37</td><td>4.96</td><td>2.14</td></tr>
+            <tr><th scope="row">DFD</th><td>28.78</td><td>325.33</td><td>3.92</td><td>11.10</td><td>5.47</td><td>1.11</td><td>3.08</td><td>1.42</td><td>4.67</td><td>1.84</td></tr>
+            <tr><th scope="row">DP-DMD</th><td>27.22</td><td>320.27</td><td>4.00</td><td>10.98</td><td>5.67</td><td>1.06</td><td>3.00</td><td>1.33</td><td>4.89</td><td>2.13</td></tr>
+            <tr><th scope="row">Reward Forcing</th><td>26.99</td><td>315.84</td><td>4.04</td><td>10.97</td><td>5.79</td><td>1.09</td><td>3.14</td><td>1.41</td><td>5.20</td><td>2.21</td></tr>
+            <tr><th scope="row">DynaForcing</th><td>27.75</td><td>326.38</td><td>4.04</td><td>10.95</td><td>5.45</td><td>1.07</td><td>2.96</td><td>1.31</td><td>4.69</td><td>2.06</td></tr>
+            <tr class="ours"><th scope="row">Routed Forcing <span>Ours</span></th><td>25.43</td><td>309.92</td><td>4.07</td><td>10.94</td><td>7.80</td><td>1.25</td><td>3.55</td><td>1.58</td><td>6.09</td><td>2.29</td></tr>
+          </tbody></table>
+        </div>
+        <p class="table-note">Full results from Table 1. Dynamics and diversity metrics are scaled by ×100, as in the paper. <a href="https://arxiv.org/html/2609.30963v1#S4.T1" target="_blank" rel="noopener">View Table 1 in the paper ↗</a></p>
+        <div class="result-takeaway"><span class="takeaway-mark" aria-hidden="true">↗</span><p id="result-takeaway"><strong>38.8% higher motion dynamics on SpeakerVid.</strong> RAFT-Motion rises from 5.62 to 7.80, while FID improves from 27.17 to 25.43 and Sync-C from 4.03 to 4.07.</p></div>
+      </div>
+    </section>
+
+    <section id="citation" class="wrap section citation-section">
+      <div><p class="eyebrow">04 / Resources</p><h2>Build on this work.</h2><p>If you find Routed Forcing useful,<br>please consider citing our paper.</p><a class="inline-link" href="https://github.com/Sugewud/Routed-Forcing" target="_blank" rel="noopener">GitHub repository ↗</a><p class="release-note">Training and inference code coming soon.</p></div>
+      <div class="citation-box"><div class="code-heading"><span>BibTeX</span><button id="copy-citation" type="button">Copy citation</button></div><pre><code id="bibtex">@misc{su2026routedforcing,
+  title={Where and When to Force: Routed Forcing for Streaming Avatars},
+  author={Zihan Su and Siwen Lu and Junhao Zhuang and Zeyue Xue and Haoyang Huang and Guanghao Li and Xiaofeng Tan and Chun Yuan and Nan Duan},
+  year={2026},
+  eprint={2609.30963},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2609.30963}
+}</code></pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div>
+    </section>
+  </main>
+  <footer class="wrap"><a class="wordmark" href="#">Routed Forcing</a><span>Where and When to Force · 2026</span><a href="../">Zihan Su’s homepage ↗</a></footer>
+</body>
+</html>
